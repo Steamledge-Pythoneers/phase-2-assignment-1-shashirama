@@ -1,7 +1,12 @@
 ## TODO: complete the function "lowest_terms" below
 # HCF finder function
 def Hcf(num1, num2):
-    if num1 < 0:
+    if num1 and num2 == 0:
+        hcf = 0
+        return hcf
+    elif num1 and num2 < 0:
+        smaller = abs(num1)
+    elif num1 < 0:
         smaller = num2
     elif num2 < 0:
         smaller = num1
@@ -29,10 +34,16 @@ def lowest_terms(x):
         hcf = Hcf(x1, x2)
         numerator = x1 // hcf
         denominator = x2 // hcf
-        solution = "{}/{}".format(numerator, denominator)
-        return solution
+        if numerator and denominator < 0:
+            solution1 = "{}/{}".format(abs(numerator), abs(denominator))
+            return solution1
+        else:
+        #answer = (numerator/denominator).as_integer_ratio()
+        #(numerator1, denominator1) = answer
+            solution = "{}/{}".format(numerator, denominator)#str(answer[0]) + "/" + str(answer[1])
+            return solution
 
-
+#print(Hcf(0, 0))
 
 
 
