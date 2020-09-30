@@ -1,21 +1,40 @@
 ## TODO: complete the function "lowest_terms" below
+# HCF finder function
+def Hcf(num1, num2):
+    if num1 < 0:
+        smaller = num2
+    elif num2 < 0:
+        smaller = num1
+    elif num1 > num2:
+        smaller = num2
+    else:
+        smaller = num1
+
+    for s in range(1, smaller + 1):
+        if (num1 % s == 0) and (num2 % s == 0):
+            hcf = s
+    return hcf
 
 def lowest_terms(x):
+    # splitting x with x1 as numerator and x2 as denominator
+    x_split = x.split("/")
+    x1, x2 = map(int, x_split)
+    if x1 == 0:
+        return "0"
 
-	if x == "20/10":
-		return "2/1"
-	elif x == "16/28":
-		return "4/7"
-	elif x == "-50/25":
-		return "-2/1"
-	elif x == "20/-60":
-		return "-1/3"
-	elif x == "-300/165":
-		return "-20/11"
-	elif x == "-12/-26":
-		return "6/13"
-	elif x == "90/0":
-		return "Undefined"
-	else:
-		return "0"
-	
+    elif x2 == 0:
+        return "Undefined"
+
+    else:
+        hcf = Hcf(x1, x2)
+        numerator = x1 // hcf
+        denominator = x2 // hcf
+        solution = "{}/{}".format(numerator, denominator)
+        return solution
+
+
+
+
+
+
+
