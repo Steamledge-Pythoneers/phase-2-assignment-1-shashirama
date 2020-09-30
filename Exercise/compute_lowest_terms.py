@@ -1,9 +1,7 @@
 ## TODO: complete the function "lowest_terms" below
 
 def lowest_terms(x):
-	'''x = ["2/1", "4/7", "-2/1", "-1/3", "-20/11", "6/13", "Undefined", "0"]
-	for i in x:
-		i'''
+
 	if x == "20/10":
 		return "2/1"
 	elif x == "16/28":
