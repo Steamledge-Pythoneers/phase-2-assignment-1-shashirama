@@ -21,7 +21,9 @@ def lowest_terms(x):
     # splitting x with x1 as numerator and x2 as denominator
     x_split = x.split("/")
     x1, x2 = map(int, x_split)
-    if x1 == 0:
+    if x1 == x2 == 0:
+        return "Undefined"
+    elif x1 == 0:
         return "0"
     elif x2 == 0:
         return "Undefined"
